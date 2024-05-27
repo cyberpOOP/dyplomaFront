@@ -4,13 +4,13 @@
     <div class="inputs">
       <div>
         <label for="email_login">Enter email</label>
-        <input id="email_login" type="email">
+        <input id="email_login" type="email" [(ngModel)]="email">
       </div>
       <div>
         <label for="password_login">Enter password</label>
-        <input id="password_login" type="password">
+        <input id="password_login" type="password" [(ngModel)]="password">
       </div>
-      <button>Login</button>
+      <button (click)="login()">Login</button>
     </div>
   </div>
 

@@ -23,6 +23,20 @@
       "es2020",
       "dom"
     ],
+    "paths": {
+      "@env/*": [
+        "src/environments/*"
+      ],
+      "@shared/*": [
+        "src/app/shared/*"
+      ],
+      "@modules/*": [
+        "src/app/modules/*"
+      ],
+      "@services/*": [
+        "src/app/services/*"
+      ]
+    },
     "useDefineForClassFields": false,
     "skipLibCheck": true
   },
