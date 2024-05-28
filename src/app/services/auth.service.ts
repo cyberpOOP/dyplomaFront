@@ -16,6 +16,7 @@ export class AuthService {
   }
 
   signup(user: any){
+    this.login(user);
     return this.httpService.post(`${this.controllerUrl}/signup`, user);
   }
 

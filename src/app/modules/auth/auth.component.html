@@ -19,21 +19,23 @@
     <div class="inputs">
       <div>
         <label for="name">Enter nickname</label>
-        <input id="name" type="text">
+        <input id="name" type="text" [(ngModel)]="name">
       </div>
       <div>
         <label for="email">Enter email</label>
-        <input id="email" type="email">
+        <input id="email" type="email"  [(ngModel)]="emailReg">
       </div>
       <div>
         <label for="password">Enter password</label>
-        <input id="password" type="password">
+        <input id="password" type="password" [(ngModel)]="passwordReg">
       </div>
       <div>
         <label for="confirmPassword">Confirm Password</label>
-        <input id="confirmPassword" type="password">
+        <input id="confirmPassword" type="password" [(ngModel)]="passwordConfirm">
       </div>
-      <button>Sign-Up</button>
+      <button type="submit" (click)="signUp()">Sign-Up</button>
     </div>
   </div>
 </div>
+
+<router-outlet></router-outlet>
