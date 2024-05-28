@@ -28,7 +28,6 @@ export class AuthComponent{
       password: this.password
     }).subscribe(
       (result) => {
-        console.log(result)
         const token = (result as any).token;
         localStorage.setItem('accessToken', token);
         this.router.navigate(['/']);

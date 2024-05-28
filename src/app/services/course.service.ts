@@ -15,4 +15,8 @@ export class CourseService {
     this.controllerUrl = '/course';
   }
 
+  getAllCourses() {
+    return this.httpService.get(`${this.controllerUrl}`);
+  }
+
 }

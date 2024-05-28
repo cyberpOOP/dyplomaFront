@@ -6,6 +6,9 @@ import {AuthModule} from "@modules/auth/auth.module";
 import {MainModule} from "@modules/main/main.module";
 import {SharedModule} from "@shared/components/shared.module";
 import {HttpClientModule} from "@angular/common/http";
+import {JWT_OPTIONS, JwtHelperService} from "@auth0/angular-jwt";
+import {AuthGuard} from "./guard/auth.guard";
+import {jwtInterceptorProviders} from "./interceptor/jwt.inteceptor";
 
 @NgModule({
   declarations: [AppComponent],
@@ -17,7 +20,7 @@ import {HttpClientModule} from "@angular/common/http";
     SharedModule,
     HttpClientModule
   ],
-  providers: [],
+  providers: [AuthGuard, JwtHelperService, {provide: JWT_OPTIONS, useValue:JWT_OPTIONS}, jwtInterceptorProviders],
   bootstrap: [AppComponent],
   exports: [
 

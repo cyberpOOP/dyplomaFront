@@ -1,6 +1,7 @@
 import { Injectable } from '@angular/core';
 import {HttpService} from "./http.service";
 import {JwtHelperService} from '@auth0/angular-jwt'
+import {Observable, of} from "rxjs";
 
 @Injectable({
   providedIn: 'root',
@@ -16,7 +17,6 @@ export class AuthService {
   }
 
   signup(user: any){
-    this.login(user);
     return this.httpService.post(`${this.controllerUrl}/signup`, user);
   }
 
@@ -27,22 +27,20 @@ export class AuthService {
   forgotPassword(user: any){
     return this.httpService.post(`${this.controllerUrl}/forgotPassword`, user);
   }
-
-  //TODO pass params
   resetPassword(user:any){
     return this.httpService.post(`${this.controllerUrl}/resetPassword`, user)
   }
 
-  getUser(user:any){
+  isAuthenticated():Observable<boolean>{
 
+    const token = localStorage.getItem('accessToken');
+    if (this.jwtHelper.isTokenExpired(token)) {
+      this.logout();
+      return of(false);
+    }
+    return of(true);
   }
-
-  updateUser(user:any){
-
+  logout():void{
+    localStorage.removeItem('accessToken');
   }
-
-  deleteUser(user: any){
-
-  }
-
 }
