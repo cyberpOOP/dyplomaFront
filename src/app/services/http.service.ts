@@ -22,7 +22,7 @@ export class HttpService {
     return this.httpClient.get<T>(this.buildUrl(url), { headers: this.headers }).pipe(catchError(this.handleError));
   }
 
-  getById<T>(url: string, id: string | number) {
+  getById<T>(url: string, id: string) {
     return this.httpClient
       .get<T>(`${this.buildUrl(url)}/${id}`, { headers: this.headers })
       .pipe(catchError(this.handleError));

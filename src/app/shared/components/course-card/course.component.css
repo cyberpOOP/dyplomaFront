@@ -48,3 +48,6 @@
 .author:hover {
   text-decoration: underline;
 }
+h4 a{
+  margin-right: 15px;
+}

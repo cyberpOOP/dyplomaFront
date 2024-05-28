@@ -1,7 +1,7 @@
 import {Component, OnInit} from "@angular/core";
 import {CourseService} from "@services/course.service";
 import {Router} from "@angular/router";
-import {HttpHeaders} from "@angular/common/http";
+import {ICourse} from "../../models/Course";
 
 @Component({
   selector: 'app-main',
@@ -12,6 +12,8 @@ import {HttpHeaders} from "@angular/common/http";
 export class MainComponent implements OnInit{
 
   private token:string;
+  public courses: ICourse[];
+
 
   constructor(
     private CourseService: CourseService,
@@ -23,7 +25,8 @@ export class MainComponent implements OnInit{
 
     this.CourseService.getAllCourses().subscribe(
       (result) =>{
-        console.log(result)
+        this.courses = (result as any).data.courses;
+        console.log(this.courses);
       },
     (error)=>{
       console.log(error)
