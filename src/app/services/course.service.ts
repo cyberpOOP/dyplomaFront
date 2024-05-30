@@ -19,4 +19,8 @@ export class CourseService {
     return this.httpService.get(`${this.controllerUrl}`);
   }
 
+  getCourseById(id:string){
+    return this.httpService.getById(`${this.controllerUrl}`,id)
+  }
+
 }

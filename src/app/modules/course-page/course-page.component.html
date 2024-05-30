@@ -1,0 +1,25 @@
+<app-header></app-header>
+
+<div class="table">
+  <div class="course-tittle">
+    <h1>{{course.name}}</h1>
+  </div>
+  <div class="course-description">
+    <h3>{{course.description}}</h3>
+    <div class="authors">
+      <a class="author" href="" *ngFor="let author of authors">{{author}}</a>
+    </div>
+  </div>
+</div>
+
+<div class="table">
+  <div class="burger-menu">
+    <h1>Course content</h1>
+    <div class="content" >
+      <h2>name</h2>
+    </div>
+  </div>
+  <div class="course-material">
+    Content
+  </div>
+</div>

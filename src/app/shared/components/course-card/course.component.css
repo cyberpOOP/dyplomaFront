@@ -16,6 +16,7 @@
   object-fit: cover;
   border-bottom-left-radius: 10px;
   border-top-left-radius: 10px;
+  cursor: pointer;
 }
 
 .card div {
@@ -50,4 +51,8 @@
 }
 h4 a{
   margin-right: 15px;
+}
+
+h2 {
+  cursor: pointer;
 }

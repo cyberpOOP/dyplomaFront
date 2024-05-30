@@ -1,4 +1,5 @@
 export interface ICourse{
+  _id: string
   name: string,
   description: string,
   members_ids: string[],

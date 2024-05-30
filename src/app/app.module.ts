@@ -9,6 +9,7 @@ import {HttpClientModule} from "@angular/common/http";
 import {JWT_OPTIONS, JwtHelperService} from "@auth0/angular-jwt";
 import {AuthGuard} from "./guard/auth.guard";
 import {jwtInterceptorProviders} from "./interceptor/jwt.inteceptor";
+import {CoursePageModule} from "@modules/course-page/course-page.module";
 
 @NgModule({
   declarations: [AppComponent],
@@ -18,7 +19,8 @@ import {jwtInterceptorProviders} from "./interceptor/jwt.inteceptor";
     AuthModule,
     MainModule,
     SharedModule,
-    HttpClientModule
+    HttpClientModule,
+    CoursePageModule
   ],
   providers: [AuthGuard, JwtHelperService, {provide: JWT_OPTIONS, useValue:JWT_OPTIONS}, jwtInterceptorProviders],
   bootstrap: [AppComponent],

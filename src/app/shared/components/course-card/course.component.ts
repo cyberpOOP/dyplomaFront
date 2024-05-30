@@ -21,6 +21,10 @@ export class CourseComponent implements OnInit{
   @Input() public course:ICourse;
   @Input() public authors:string[];
 
+  public  toCourse():void{
+    this.router.navigate([`/course/${this.course._id}`]);
+  }
+
   ngOnInit(){
       this.UserService.getUsersByIds(this.course.authors_ids).subscribe(
           (result) => {

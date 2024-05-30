@@ -26,7 +26,6 @@ export class MainComponent implements OnInit{
     this.CourseService.getAllCourses().subscribe(
       (result) =>{
         this.courses = (result as any).data.courses;
-        console.log(this.courses);
       },
     (error)=>{
       console.log(error)

@@ -1,7 +1,7 @@
 <div class="card">
-  <img src="https://www.wfla.com/wp-content/uploads/sites/71/2023/05/GettyImages-1389862392.jpg?w=2560&h=1440&crop=1" alt="">
+  <img src="https://www.wfla.com/wp-content/uploads/sites/71/2023/05/GettyImages-1389862392.jpg?w=2560&h=1440&crop=1" alt="" (click)="toCourse()">
   <div>
-    <h2>{{course.name}}</h2>
+    <h2 (click)="toCourse()">{{course.name}}</h2>
     <h3>{{course.description}}</h3>
     <h4>
       <a class="author" href="" *ngFor="let author of authors">{{author}}</a>
